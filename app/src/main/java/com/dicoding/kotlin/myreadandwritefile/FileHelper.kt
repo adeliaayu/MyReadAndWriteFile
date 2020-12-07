@@ -13,7 +13,7 @@ internal object FileHelper {
 
     fun writeToFile(fileModel: FileModel, context: Context) {
         try {
-            val outputStreamWriter = OutputStreamWriter(context.openFileOutput(fileModel.toString(), Context.MODE_PRIVATE))
+            val outputStreamWriter = OutputStreamWriter(context.openFileOutput(fileModel.filename.toString(), Context.MODE_PRIVATE))
             outputStreamWriter.write(fileModel.data.toString())
             outputStreamWriter.close()
         } catch (e: IOException) {
